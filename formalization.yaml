@@ -60,8 +60,8 @@ automation:
   spend_usd: "subscription-based; not tracked"
   notes: >-
     Challenge.lean contains the auditable statement surface; Solution.lean
-    independently proves it. A clean local Lean build has completed; Comparator,
-    NanoDa, and the full Palomar preflight remain required before intake.
+    independently proves it. A clean local Lean build and the full pinned
+    Palomar preflight have completed successfully.
 
 fidelity:
   divergences: >-
@@ -75,8 +75,8 @@ review:
     - "OpenAI Codex"
   notes: >-
     The statements were checked against the immutable production release,
-    permitted-axiom list, and a clean local build. Comparator, NanoDa, and the
-    full Palomar preflight are configured as mandatory pre-intake checks.
+    permitted-axiom list, clean build, Comparator, NanoDa, and the full Palomar
+    preflight.
 
 alignment:
   namespace: "LeanSchrodingerPalomar"
