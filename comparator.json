@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "LeanSchrodingerPalomar.exactSchrodingerKineticSplit",
+    "LeanSchrodingerPalomar.schrodingerRemainderBound"
+  ],
+  "definition_names": [
+    "LeanSchrodingerPalomar.relativisticEnergy",
+    "LeanSchrodingerPalomar.restPhaseRemovedEnergy",
+    "LeanSchrodingerPalomar.schrodingerEnergy",
+    "LeanSchrodingerPalomar.schrodingerRemainder"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

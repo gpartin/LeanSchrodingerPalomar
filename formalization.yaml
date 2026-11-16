@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Exact Schrödinger kinetic split and quartic remainder bound"
+  description: >-
+    A Lean formalization showing that, for positive mass, the positive
+    relativistic kinetic energy after rest-energy removal equals the
+    Schrödinger kinetic term plus an explicit correction whose magnitude is
+    bounded by a quartic expression.
+  authors:
+    - "G. D. Partin"
+  license: "CC0-1.0"
+  responsible_maintainers:
+    - "G. D. Partin"
+
+classification:
+  arxiv: ["math-ph", "cs.LO"]
+  msc2020: ["03B35", "81Q05"]
+
+sources:
+  - title: "Lean-Formalized Conditional Nonrelativistic Schrodinger Handoff"
+    type: original-proof
+    relationship: other
+    id: "https://doi.org/10.5281/zenodo.24270168"
+    location: "https://github.com/gpartin/LeanSchrodingerDerivation"
+    license: "CC0-1.0"
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    The selected declarations prove an exact positive-energy kinetic split and
+    an explicit quartic remainder bound under positive mass. The free-Dirac
+    mass shell is not derived here. No theorem establishes an
+    arbitrary-wavefunction position-space Schrodinger PDE, the Born rule, a
+    physical electron, or a complete quantum theory.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "LeanSchrodingerPalomar.exactSchrodingerKineticSplit"
+    - "LeanSchrodingerPalomar.schrodingerRemainderBound"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex"]
+      framework: "Codex desktop"
+      tool_setup: "Human-directed AI-assisted Lean implementation, compilation, adversarial review, and submission preparation"
+      cost:
+        wall_time: "multi-session research program"
+        spend_usd: "subscription-based; not tracked"
+        hardware: "local Windows workstation and GitHub Actions"
+      prompting_notes: >-
+        The human directed the research goal, claim boundaries, release scope,
+        and repeated red-team requirements. The agent implemented and checked
+        the Lean development and prepared this disclosure.
+  spend_usd: "subscription-based; not tracked"
+  notes: >-
+    Challenge.lean contains the auditable statement surface; Solution.lean
+    independently proves it. A clean local Lean build has completed; Comparator,
+    NanoDa, and the full Palomar preflight remain required before intake.
+
+fidelity:
+  divergences: >-
+    The wrapper deliberately selects only the exact kinetic decomposition and
+    remainder bound from the larger thirteen-stage conditional handoff.
+
+review:
+  status: "self-assessed and agent-reviewed"
+  reviewers:
+    - "G. D. Partin"
+    - "OpenAI Codex"
+  notes: >-
+    The statements were checked against the immutable production release,
+    permitted-axiom list, and a clean local build. Comparator, NanoDa, and the
+    full Palomar preflight are configured as mandatory pre-intake checks.
+
+alignment:
+  namespace: "LeanSchrodingerPalomar"
+  statements:
+    - source: "SCHRODINGER-006 exact kinetic decomposition"
+      lean: "LeanSchrodingerPalomar.exactSchrodingerKineticSplit"
+      module: "Solution"
+      status: "proved"
+      note: "Matches the production decomposition after renaming only."
+    - source: "SCHRODINGER-006 quartic correction bound"
+      lean: "LeanSchrodingerPalomar.schrodingerRemainderBound"
+      module: "Solution"
+      status: "proved"
+      note: "Matches the production inequality after renaming only."
+
+acknowledgements: "Lean, Mathlib, Palomar Registry, OpenAI Codex, and public reviewers of the repository."
